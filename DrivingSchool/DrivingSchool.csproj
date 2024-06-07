@@ -127,6 +127,15 @@
     <Compile Include="Windows\CategoryAWindow.xaml.cs">
       <DependentUpon>CategoryAWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\CategoryBWindow.xaml.cs">
+      <DependentUpon>CategoryBWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CategoryCWindow.xaml.cs">
+      <DependentUpon>CategoryCWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CategoryDWindow.xaml.cs">
+      <DependentUpon>CategoryDWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\CourseWindow.xaml.cs">
       <DependentUpon>CourseWindow.xaml</DependentUpon>
     </Compile>
@@ -165,6 +174,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\CategoryAWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CategoryBWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CategoryCWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CategoryDWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

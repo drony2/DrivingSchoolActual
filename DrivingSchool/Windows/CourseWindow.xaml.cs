@@ -31,11 +31,37 @@ namespace DrivingSchool.Windows
             this.Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnCategoryD_Click(object sender, RoutedEventArgs e)
+        {
+            CategoryDWindow categoryDWindow = new CategoryDWindow();
+            categoryDWindow.Show();
+            this.Close();
+        }
+
+        private void btnCategoryC_Click(object sender, RoutedEventArgs e)
+        {
+            CategoryCWindow categoryCWindow = new CategoryCWindow();
+            categoryCWindow.Show();
+            this.Close();
+        }
+    
+
+        private void btnCategoryB_Click(object sender, RoutedEventArgs e)
+        {
+            CategoryBWindow categoryBWindow = new CategoryBWindow();
+            categoryBWindow.Show();
+            this.Close();
+        }
+
+        private void btnCategoryA_Click(object sender, RoutedEventArgs e)
         {
             CategoryAWindow categoryAWindow = new CategoryAWindow();
             categoryAWindow.Show();
             this.Close();
         }
+
+
+
+
     }
 }

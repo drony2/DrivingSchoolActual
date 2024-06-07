@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace DrivingSchool.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для CategoryAWindow.xaml
+    /// Логика взаимодействия для CategoryBWindow.xaml
     /// </summary>
-    public partial class CategoryAWindow : Window
+    public partial class CategoryBWindow : Window
     {
-        public CategoryAWindow()
+        public CategoryBWindow()
         {
             InitializeComponent();
         }
@@ -33,7 +33,7 @@ namespace DrivingSchool.Windows
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            CourseWindow courseWindow = new CourseWindow(); 
+            CourseWindow courseWindow = new CourseWindow();
             courseWindow.Show();
             this.Close();
         }

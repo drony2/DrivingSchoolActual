@@ -1,0 +1,59 @@
+﻿<Window x:Class="DrivingSchool.Windows.CategoryBWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DrivingSchool.Windows"
+        mc:Ignorable="d"
+        Title="CategoryBWindow" 
+        WindowStartupLocation="CenterScreen"
+        Height="800" Width="1200">
+    <Grid>
+
+        <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Четырехколесный транспорт"
+                   FontSize="32"
+                   HorizontalAlignment="Center"/>
+        <Button x:Name="btnBack" 
+                Width="50"
+                Height="50"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="16 7 0 16" 
+                BorderThickness="0"
+                Click="btnBack_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Res/Images/Iconoir_arrow-left-circled.svg.png"/>
+            </Button.Background>
+        </Button>
+
+        <TextBlock x:Name="tblText"
+                   Grid.Row="1" 
+                   FontSize="22" 
+                   Margin="16 8 8 0" TextWrapping="Wrap" 
+                   Text="   Четырехколесный транспорт транспорт делитмся на 3 вида:
+                   &#13;       - B Легковые автомобили (количеством пассажирских мест меньше 8):                    
+                   &#13;       - B1 - Трициклы и квадрициклы; 
+                   &#13;       - BE - Легковая машина с прицепом;
+                   &#13;    Категория В - позволяют управлять легковыми автомобилями с максимальной массой 3.5 тонны и количеством мест в салоне не более 8 шт, не считая места водителя. Владельцам прав категории «B» также разрешено вождение легкового транспорта, который сцеплен с прицепом, допустимая маса не должна превышать 750 кг. 
+                   &#13;    Категория В1- относятся квадрициклы и трициклы, мотоциклы с боковым прицепом, мотоколяски и другие трехколесные (четырехколесные) мототранспортные средства, предназначенные для использования по дорогам общего пользования, разрешенная максимальная масса которых не превышает 400 кг.
+                   &#13;    Категория ВЕ-позволяет эксплуатировать массивный прицеп, например, дома на колесах. Открывать ее нужно, если общая масса “сцепки” превышает 3.5-тонный лимит, масса прицепа выше, чем у самой машины без нагрузки.
+                       "/>
+
+            <Button x:Name="btnAddOrder"
+                Grid.Row="2"
+                Content="Записать ученика на курс"
+                Width="400"
+                Height="70"
+                FontSize="28"
+                Foreground="White"
+                Background="#00693E"
+                Margin="0 0 0 0" Click="btnAddOrder_Click"/>
+        </Grid>
+</Window>
+
