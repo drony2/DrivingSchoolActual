@@ -1,0 +1,72 @@
+﻿<Window x:Class="DrivingSchool.Windows.InstructorListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DrivingSchool.Windows"
+        mc:Ignorable="d"
+        Title="InstructorListWindow"    
+        WindowStartupLocation="CenterScreen"
+    Height="800" Width="1200">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="btnBack" 
+                Width="50"
+                Height="50"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="16 0 0 0" 
+                BorderThickness="0"
+                Click="btnBack_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Res/Images/Iconoir_arrow-left-circled.svg.png"/>
+            </Button.Background>
+        </Button>
+
+        <TextBlock Text="Список инструкторов"
+                   FontSize="28"
+                   HorizontalAlignment="Center"/>
+
+        <WrapPanel Grid.Row="1"
+               VerticalAlignment="Center">
+            <TextBlock Text="Поиск"
+                   FontSize="22"
+                   VerticalAlignment="Center"
+                   Margin="16 0 16 0"/>
+
+            <TextBox x:Name="tbxFilter" Width="300"
+                     Text="Введите данные инструктора"
+                     VerticalContentAlignment="Center"
+                     FontSize="20"
+                     BorderThickness="2"
+                     Foreground="Gray"
+                     Mouse.GotMouseCapture="tbxFilter_GotMouseCapture"
+                     TextChanged="tbxFilter_TextChanged"/>
+        </WrapPanel>
+
+        <ListView x:Name="lvInstructor" 
+                  Grid.Row="2" 
+                  d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Код ученика" Width="100" DisplayMemberBinding="{Binding ID}"/>
+                    <GridViewColumn Header="Фамилия" Width="200"  DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="Имя" Width="200"  DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Header="Отчетво" Width="200"  DisplayMemberBinding="{Binding Patronymic}"/>
+                    <GridViewColumn Header="Дата рождения" Width="150" DisplayMemberBinding="{Binding DateOfBirth}"/>
+                    <GridViewColumn Header="Серия паспорта" Width="150" DisplayMemberBinding="{Binding PassportSeries}"/>
+                    <GridViewColumn Header="Номер паспорта" Width="150" DisplayMemberBinding="{Binding PassportNumber}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>

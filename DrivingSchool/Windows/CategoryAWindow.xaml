@@ -1,0 +1,46 @@
+﻿<Window x:Class="DrivingSchool.Windows.CategoryAWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DrivingSchool.Windows"
+        mc:Ignorable="d"
+        Title="CategoryAWindow"         
+        WindowStartupLocation="CenterScreen"
+        Height="800" Width="1200">
+    
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Двухколёсный транспорт"
+                   FontSize="32"
+                   HorizontalAlignment="Center"/>
+
+        <TextBlock Grid.Row="1" 
+                   FontSize="22" 
+                   Margin="16 8 8 0" TextWrapping="Wrap" 
+                   Text="Двухколёсный транспорт делится на три категории:                     
+                   &#13; М – мопеды; 
+                   &#13; А1 – легкие мотоциклы; 
+                   &#13; А – мотоциклы. 
+                   &#13; Категория М предназначена для управления мопедами и легкими квадрициклами. Она открывается автоматически при сдаче экзамена на любую из других категорий. По сути, мопед может водить любой школьник.  Обязанность получить права была введена в связи с большим количеством смертей на дорогах в результате ДТП с участием мопеда. То есть, авторы ПДД считают, что, пройдя курс теории и научившись вождению на любом серьезном транспорте, вы будете более осведомлены и аккуратны в вождении этих несложных мото-средства. Доплачивать за категорию не нужно. 
+                   &#13; Категория А1 для «слабых» мотоциклов до 125 «кубов» может быть открыта с 16-летнего возраста – в этом кроется её основная особенность. Однако обладатель прав с пометкой А1 не сможет водить крутой байк с мотором больше 125 «кубов».
+                   &#13; Категория А – самая обширная, она позволяет управлять всеми видами мототранспорта, в том числе с коляской. Также она открывает доступ к управлению квадроциклами до 400 килограммов. То есть, выучившись на категорию А, у вас автоматически откроются категории А1 и М."
+                   />
+
+        <Button x:Name="btnAddOrder"
+                Grid.Row="2"
+                Content="Записать ученика на курс"
+                Width="400"
+                Height="70"
+                FontSize="28"
+                Foreground="White"
+                Background="#00693E"
+                Margin="0 0 0 0" Click="btnAddOrder_Click"/>
+    </Grid>
+</Window>

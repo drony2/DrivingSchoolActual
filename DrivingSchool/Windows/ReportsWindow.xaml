@@ -1,0 +1,109 @@
+﻿<Window x:Class="DrivingSchool.Windows.ReportsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DrivingSchool.Windows"
+        mc:Ignorable="d"
+        Title="ReportsWindow" 
+        WindowStartupLocation="CenterScreen"
+Height="800" Width="1260">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="btnBack" 
+                Width="50"
+                Height="50"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="16 0 0 0" 
+                BorderThickness="0"
+                Click="btnBack_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Res/Images/Iconoir_arrow-left-circled.svg.png"/>
+            </Button.Background>
+        </Button>
+
+        <TextBlock Text="Отчеты о записях на курсы"
+                   FontSize="32"
+                   HorizontalAlignment="Center"/>
+
+        <WrapPanel Grid.Row="1"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center">
+
+            <TextBlock Text="Поиск"
+                       FontSize="22"
+                       VerticalAlignment="Center"
+                       Margin="100 0 16 0"/>
+
+            <TextBox Width="200"
+                     Text="Введите данные"
+                     Mouse.GotMouseCapture="tbxPoisk_GotMouseCapture"
+                     TextChanged="tbxPoisk_TextChanged"
+                     VerticalContentAlignment="Center"
+                     FontSize="20"
+                     BorderThickness="2"
+                     Foreground="Gray"
+                     x:Name="tbxPoisk"/>
+
+            <ComboBox x:Name="cbxCategory"
+                      Width="200"
+                      Margin="30 0 0 0"
+                      FontSize="20"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"/>
+            <Button x:Name="btnPoisk" 
+                Width="35"
+                Height="29"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" 
+                BorderThickness="0"
+                    Margin="30 0 0 0"
+                Click="btnPoisk_Click">
+                
+                <Button.Background>
+                    <ImageBrush ImageSource="/Res/Images/icons8-поиск-30.png"/>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="btnRes" 
+                Width="30"
+                Height="29"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" 
+                BorderThickness="0"
+                    Margin="30 0 0 0"
+                Click="btnRes_Click">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="/Res/Images/icons8-удалить-24.png"/>
+                </Button.Background>
+            </Button>
+
+        </WrapPanel>
+
+
+        <ListView x:Name="lvReport" 
+            Grid.Row="2" 
+            d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Код заявки" Width="100" DisplayMemberBinding="{Binding ID}"/>
+                    <GridViewColumn Header="Фимилия ученика" Width="200"  DisplayMemberBinding="{Binding Student.LastName}"/>
+                    <GridViewColumn Header="Имя ученика" Width="200"  DisplayMemberBinding="{Binding Student.FirstName}"/>
+                    <GridViewColumn Header="Отчетво ученика" Width="200"  DisplayMemberBinding="{Binding Student.Patronymic}"/>
+                    <GridViewColumn Header="Дата заявки" Width="150" DisplayMemberBinding="{Binding DateOrder}"/>
+                    <GridViewColumn Header="Категория" Width="150" DisplayMemberBinding="{Binding Category.NameCategory}"/>
+                    <GridViewColumn Header="Фимилия инструктора" Width="150" DisplayMemberBinding="{Binding Instructor.LastName}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
