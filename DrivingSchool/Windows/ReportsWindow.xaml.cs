@@ -1,5 +1,6 @@
 ﻿using DrivingSchool.Classes;
 using System.Data.Entity.Core.Mapping;
+using System.Globalization;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -43,25 +44,24 @@ namespace DrivingSchool.Windows
 
         private void UpdateList()
         {
-            if (tbxPoisk.Text != "Введите данные" && tbxPoisk.Text.ToString() !="" && cbxCategory.Text.ToString() != "")
-            {   
-                lvReport.ItemsSource = DBClass.context.Order.Where(p =>  p.Category.NameCategory == cbxCategory.Text.ToString() &&
-                p.Student.LastName.Contains( tbxPoisk.Text.ToString())).ToList();
-            }
-            else if ( tbxPoisk.Text.ToString() == "" || tbxPoisk.Text.ToString() == "Введите данные")
-            {
-                lvReport.ItemsSource = DBClass.context.Order.Where(p => p.Category.NameCategory == cbxCategory.Text.ToString()).ToList();
-            }
-            else if (cbxCategory.Text.ToString() == "")
+            if (tbxPoisk.Text != "" && cbxCategory.Text.ToString() == "" && tbxPoisk.Text != "Введите данные")
             {
                 lvReport.ItemsSource = DBClass.context.Order.Where(p => p.Student.LastName.Contains(tbxPoisk.Text.ToString())).ToList();
             }
-
+            else if (tbxPoisk.Text == "" || tbxPoisk.Text == "Введите данные" && cbxCategory.Text.ToString() != "")
+            {
+                lvReport.ItemsSource = DBClass.context.Order.Where(p => p.Category.NameCategory == cbxCategory.Text.ToString()).ToList();
+            }
+            else if (tbxPoisk.Text != "" && cbxCategory.Text.ToString() != "" && tbxPoisk.Text != "Введите данные")
+            {
+                lvReport.ItemsSource = DBClass.context.Order.Where(p => p.Category.NameCategory == cbxCategory.Text.ToString() &&
+                p.Student.LastName.Contains(tbxPoisk.Text.ToString())).ToList();
+            }
         }
 
         private void tbxPoisk_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(tbxPoisk.Text != "Введите данные" )
+            if (tbxPoisk.Text != "" && tbxPoisk.Text != "Введите данные")
             {
                 UpdateList();
             }
