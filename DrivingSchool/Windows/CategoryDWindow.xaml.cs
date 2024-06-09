@@ -23,5 +23,19 @@ namespace DrivingSchool.Windows
         {
             InitializeComponent();
         }
+
+        private void btnAddOrder_Click(object sender, RoutedEventArgs e)
+        {
+            AddOrderWindow addOrderWindow = new AddOrderWindow();
+            addOrderWindow.Show();
+            this.Close();
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            CourseWindow courseWindow = new CourseWindow();
+            courseWindow.Show();
+            this.Close();
+        }
     }
 }

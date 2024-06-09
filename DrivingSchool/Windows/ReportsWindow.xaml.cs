@@ -44,7 +44,11 @@ namespace DrivingSchool.Windows
 
         private void UpdateList()
         {
-            if (tbxPoisk.Text != "" && cbxCategory.Text.ToString() == "" && tbxPoisk.Text != "Введите данные")
+            if (tbxPoisk.Text == "" && cbxCategory.Text == "")
+            {
+                lvReport.ItemsSource = DBClass.context.Order.ToList();
+            }
+            else if (tbxPoisk.Text != "" && cbxCategory.Text.ToString() == "" && tbxPoisk.Text != "Введите данные")
             {
                 lvReport.ItemsSource = DBClass.context.Order.Where(p => p.Student.LastName.Contains(tbxPoisk.Text.ToString())).ToList();
             }
@@ -57,11 +61,12 @@ namespace DrivingSchool.Windows
                 lvReport.ItemsSource = DBClass.context.Order.Where(p => p.Category.NameCategory == cbxCategory.Text.ToString() &&
                 p.Student.LastName.Contains(tbxPoisk.Text.ToString())).ToList();
             }
+            
         }
 
         private void tbxPoisk_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (tbxPoisk.Text != "" && tbxPoisk.Text != "Введите данные")
+            if (tbxPoisk.Text != "Введите данные")
             {
                 UpdateList();
             }

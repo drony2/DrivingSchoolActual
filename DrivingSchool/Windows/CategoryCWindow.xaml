@@ -5,8 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DrivingSchool.Windows"
         mc:Ignorable="d"
-        Title="CategoryCWindow" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="CategoryCWindow" 
+        Height="800" Width="1200">
     <Grid>
-        
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Грузовой транспорт"
+                   FontSize="32"
+                   HorizontalAlignment="Center"/>
+        <Button x:Name="btnBack" 
+                Width="50"
+                Height="50"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="16 7 0 16" 
+                BorderThickness="0"
+                Click="btnBack_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Res/Images/Iconoir_arrow-left-circled.svg.png"/>
+            </Button.Background>
+        </Button>
+
+        <TextBlock x:Name="tblText"
+                   Grid.Row="1" 
+                   FontSize="22" 
+                   Margin="16 8 8 0" TextWrapping="Wrap" 
+                   Text="   Грузовые автомобили делятся на четыре категории:                     
+                   &#13;      - С: Грузовые автомобили
+                   &#13;      - СЕ: Грузовые автомобили с прицепом
+                   &#13;      - С1: Грузовой автомобиль (от 3.5 до 7.5 т)
+                   &#13;      - С1Е: Легкие грузовики
+                   &#13;    Категория С - дает возможность законного управления средним грузовиками (масса от 3.5 до 7.5 тонн), тяжелыми (свыше 7.5 тонн) и грузовиками, укомплектованными прицепами, если их масса не выходит за лимиты 750 килограммов.
+                   &#13;    Категория СЕ - позволяют управлять грузовыми автомобилями с прицепами и полуприцепами с разрешенной массой более 750 кг. Для обучения на категорию СЕ необходим стаж управления транспортными средствами категории «С» сроком не менее 12 месяцев.
+                   &#13;    Категория С1 - позволяет управлять грузовиками среднего тоннажа, максимум массы которых находится в пределах от 3.5 до 7.5 тонн, допустима комплектация легким прицепом не тяжелее 750 килограммов.
+                   &#13;    Категория С1Е - предоставляет право на управление транспортом категории С1, вес которого составляет от 3,5 тонн до 7,5 тонн, сцепленного с прицепом, масса которого превышает 750 килограмм, но не превышает массы автомобиля без нагрузки. Главное условие данного состава, это чтобы суммарный вес не превышал 12 тонн." 
+                   />
+
+        <Button x:Name="btnAddOrder"
+                Grid.Row="2"
+                Content="Записать ученика на курс"
+                Width="400"
+                Height="70"
+                FontSize="28"
+                Foreground="White"
+                Background="#00693E"
+                Margin="0 0 0 0" Click="btnAddOrder_Click"/>
     </Grid>
 </Window>

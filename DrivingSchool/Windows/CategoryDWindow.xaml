@@ -5,8 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DrivingSchool.Windows"
         mc:Ignorable="d"
-        Title="CategoryDWindow" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="CategoryDWindow"
+        Height="800" Width="1200">
     <Grid>
-        
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Пассажирский транспорт"
+                   FontSize="32"
+                   HorizontalAlignment="Center"/>
+        <Button x:Name="btnBack" 
+                Width="50"
+                Height="50"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="16 7 0 16" 
+                BorderThickness="0"
+                Click="btnBack_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Res/Images/Iconoir_arrow-left-circled.svg.png"/>
+            </Button.Background>
+        </Button>
+
+        <TextBlock x:Name="tblText"
+                   Grid.Row="1" 
+                   FontSize="22" 
+                   Margin="16 8 8 0" TextWrapping="Wrap" 
+                   Text="   Пассажирский транспорт делятся на четыре категории:                     
+                   &#13;      - D: Автобусы
+                   &#13;      - D1: Микроавтобусы
+                   &#13;      - DE: Автобусы с прицепом
+                   &#13;      - D1E: Микроавтобусы с прицепом
+                   &#13;    Категория D -  дает право управления транспортными средствами, предназначенными для пассажирских перевозок. Речь идет, прежде всего, об автобусах, оборудованных 8 или более сидячими местами.
+                   &#13;    Категория D1 - управление транспортом, который предназначен для перевозки пассажиров и имеет более 8 пассажирских мест, но не более 16. Помимо этого, разрешено использование прицепа, масса которого не превышает 750 килограмм.
+                   &#13;    Категория DE -  позволяет управлять автопоездами  и автобусами, сочлененные с прицепом, вес которых значительно превышает 750 кг. Автобус с прицепом является разновидностью общественного транспорта, распространенного в крупных городах.
+                   &#13;    Категория D1E - управление машинами подкатегории «D1» (небольшие автобусы), сцепленные с большим прицепом, при этом не предназначенным для перевозки пассажиров."
+                   /> 
+
+        <Button x:Name="btnAddOrder"
+                Grid.Row="2"
+                Content="Записать ученика на курс"
+                Width="400"
+                Height="70"
+                FontSize="28"
+                Foreground="White"
+                Background="#00693E"
+                Margin="0 0 0 0" Click="btnAddOrder_Click"/>
     </Grid>
 </Window>
