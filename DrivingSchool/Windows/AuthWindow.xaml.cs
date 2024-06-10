@@ -30,7 +30,7 @@ namespace DrivingSchool.Windows
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var userAuth = DBClass.context.Instructor.ToList()
-                .Where(i => i.Login == txtLogin.Text && i.Password == txtPassword.Text).FirstOrDefault();
+                .Where(i => i.Login == txtLogin.Text && i.Password == txtPassword.Password).FirstOrDefault();
             if (userAuth != null)
             {
                 MenuWindow menuWindow = new MenuWindow();
@@ -62,17 +62,17 @@ namespace DrivingSchool.Windows
 
         private void txtPassword_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (txtPassword.Text == "Введите пароль")
+            if (txtPassword.Password == "Введите пароль")
             {
-                txtPassword.Text = "";
+                txtPassword.Password = "";
             }
         }
 
         private void txtPassword_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (txtPassword.Text == "")
+            if (txtPassword.Password == "")
             {
-                txtPassword.Text = "Введите пароль";
+                txtPassword.Password = "Введите пароль";
             }
         }
     }

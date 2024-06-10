@@ -31,8 +31,8 @@
                      GotFocus="txtLogin_GotFocus"
                      LostFocus="txtLogin_LostFocus"/>
 
-            <TextBox x:Name="txtPassword" 
-                     Text="Введите пароль"
+            <PasswordBox x:Name="txtPassword" 
+                     Password="Введите пароль"
                      Width="250"
                      Height="50"
                      FontSize="24"
